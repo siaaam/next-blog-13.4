@@ -1,3 +1,4 @@
+import Button from "@/components/Button/Button";
 import Image from "next/image";
 import Hero from "/public/hero.png";
 export default function Home() {
@@ -11,9 +12,7 @@ export default function Home() {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <button className="bg-emerald-600 p-5 rounded border-none text-lg font-light w-[max-content] text-white">
-          See Our Works
-        </button>
+        <Button>See Our Works</Button>
       </div>
       <div className="flex-1">
         <Image
