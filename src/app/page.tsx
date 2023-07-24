@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <div className="flex-1">
         <Image
-          className="w-full h-[530px] object-cover"
+          className="w-full h-[530px] object-contain "
           src={Hero}
           alt="Hero Image"
         />
