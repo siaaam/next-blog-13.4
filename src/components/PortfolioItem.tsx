@@ -6,7 +6,7 @@ interface PortfolioItemProps {
   title: string;
   desc: string;
   img: string;
-  isEven: string;
+  isEven?: string;
 }
 
 const PortfolioItem: React.FC<PortfolioItemProps> = ({
