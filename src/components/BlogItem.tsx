@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 interface BlogItemProps {
-  id: number;
+  id: string;
   title: string;
   desc: string;
   image: string;
@@ -13,7 +12,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ id, title, desc, image }) => {
       href={`/blog/${id}`}
     >
       <div className="flex-3">
-        <Image
+        <img
           src={image}
           className="object-contain"
           alt={title.toLowerCase()}
