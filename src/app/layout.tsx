@@ -1,3 +1,4 @@
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import type { Metadata } from "next";
@@ -21,11 +22,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="max-w-7xl mx-auto px-4 min-h-screen flex flex-col justify-between">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className="max-w-7xl mx-auto px-4 min-h-screen flex flex-col justify-between">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

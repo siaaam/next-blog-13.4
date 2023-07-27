@@ -7,7 +7,8 @@ const getData = async (id: any) => {
   } catch (err) {
     console.log(err);
   }
-}; // or Dynamic metadata
+};
+
 export async function generateMetadata({ params }: any) {
   const id = params.id;
   const data = await getData(id);
