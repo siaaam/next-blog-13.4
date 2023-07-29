@@ -1,6 +1,6 @@
 const getData = async (id: any) => {
   try {
-    const data = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    const data = await fetch(`/api/posts/${id}`, {
       cache: "no-store",
     });
     return data.json();

@@ -13,10 +13,10 @@ const getData = async () => {
 
 const Blog = async () => {
   const blogData = await getData();
-  console.log(blogData);
+
   return (
     <div className="space-y-10 py-12">
-      {blogData.map((blog: any) => {
+      {blogData?.map((blog: any) => {
         console.log(blog._id);
         return (
           <BlogItem
