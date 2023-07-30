@@ -1,6 +1,6 @@
 const getData = async (id: any) => {
   try {
-    const data = await fetch(`/api/posts/${id}`, {
+    const data = await fetch(`${process.env.URL}/api/posts/${id}`, {
       cache: "no-store",
     });
     return data.json();
@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: any) {
   const data = await getData(id);
   console.log(data);
   return {
-    title: data.title,
-    description: data.desc,
+    title: data?.title,
+    description: data?.desc,
   };
 }
 
@@ -27,24 +27,24 @@ const BlogPost = async ({ params }: any) => {
     <div className="mb-10">
       <div className="flex justify-between gap-5 py-16">
         <div className="flex-1 flex flex-col relative">
-          <h1 className="text-xl font-bold">{blogData.title}</h1>
+          <h1 className="text-xl font-bold">{blogData?.title}</h1>
           <p className="text-sm font-medium text-gray-500 my-3">
-            {blogData.desc}
+            {blogData?.desc}
           </p>
           <div className="flex items-center gap-5 absolute bottom-3 left-3">
             <img
               src="/user1.jpg"
-              alt={blogData.title}
+              alt={blogData?.title}
               height={60}
               width={60}
               className="object-contain rounded-full"
             />
-            <span className="text-sm">{blogData.username}</span>
+            <span className="text-sm">{blogData?.username}</span>
           </div>
         </div>
         <div className="flex-1">
           <img
-            src={blogData.image}
+            src={blogData?.image}
             alt="blog "
             className="object-cover"
             height={350}
@@ -53,7 +53,7 @@ const BlogPost = async ({ params }: any) => {
         </div>
       </div>
       <div>
-        <p>{blogData.content}</p>
+        <p>{blogData?.content}</p>
       </div>
     </div>
   );

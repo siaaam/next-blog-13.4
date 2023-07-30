@@ -1,5 +1,6 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 const Login = () => {
   const session = useSession();
@@ -35,13 +36,25 @@ const Login = () => {
           required
           className="p-5 bg-transparent border-2 border-gray-700 outline-none rounded text-xl font-bold"
         />
-        <button className="p-5 cursor-pointer bg-teal-600 rounded border-none font-bold text-gray-200">
+        <button
+          type="submit"
+          className="p-5 cursor-pointer bg-teal-600 rounded border-none font-bold text-gray-200"
+        >
           Login
         </button>
       </form>
-      <button className="bg-red-500 p-4" onClick={() => signIn("google")}>
+      <button
+        className="bg-transparent border-2 border-teal-500 hover:border-gray-800 p-4"
+        onClick={() => signIn("google")}
+      >
         Login with Google
       </button>
+      <Link
+        className="bg-transparent border-2 border-teal-500 hover:border-gray-800 p-4"
+        href="/dashboard/register"
+      >
+        <button type="button">Singup</button>
+      </Link>
     </div>
   );
 };

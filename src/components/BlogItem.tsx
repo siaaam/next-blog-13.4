@@ -7,17 +7,14 @@ interface BlogItemProps {
 }
 const BlogItem: React.FC<BlogItemProps> = ({ id, title, desc, image }) => {
   return (
-    <Link
-      className="flex gap-10 justify-between items-center"
-      href={`/blog/${id}`}
-    >
+    <Link className="flex gap-10  items-center" href={`/blog/${id}`}>
       <div className="flex-3">
         <img
           src={image}
-          className="object-contain"
+          className="object-cover"
           alt={title.toLowerCase()}
-          height={400}
-          width={500}
+          height={300}
+          width={400}
         />
       </div>
       <div className="flex-3 flex gap-3 flex-col">
