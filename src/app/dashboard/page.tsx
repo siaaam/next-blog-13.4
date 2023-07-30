@@ -7,15 +7,14 @@ import useSWR from "swr";
 const Dashboard = () => {
   const router = useRouter();
   const session = useSession();
-  const fetcher = (...args: any[]) => fetch(...args).then((res) => res.json());
+  const fetcher = (...args: Parameters<typeof fetch>) => {
+    return fetch(...args).then((res) => res.json());
+  };
 
-  const { data, mutate, error, isLoading } = useSWR(
+  const { data, mutate, error, isLoading } = useSWR<any>(
     `/api/posts?username=${session?.data?.user?.name}`,
     fetcher
   );
-
-  console.log(data);
-  console.log(session);
 
   if (session.status === "loading") {
     return <p>loading..</p>;
