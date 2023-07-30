@@ -2,9 +2,10 @@ import BlogItem from "@/components/BlogItem";
 
 const getData = async () => {
   try {
-    const data = await fetch("http://localhost:3000/api/posts", {
+    const data = await fetch(`${process.env.URL}/api/posts`, {
       cache: "no-store",
     });
+
     return data.json();
   } catch (err) {
     console.log(err);
