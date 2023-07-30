@@ -1,6 +1,8 @@
 import Button from "@/components/Button/Button";
 import Image from "next/image";
+import Link from "next/link";
 import Hero from "/public/hero.png";
+
 export default function Home() {
   return (
     <div className="flex items-center gap-24">
@@ -12,7 +14,9 @@ export default function Home() {
           Turning your Idea into Reality. We bring together the teams from the
           global tech industry.
         </p>
-        <Button>See Our Works</Button>
+        <Link href="/portfolio">
+          <Button>See Our Works</Button>
+        </Link>
       </div>
       <div className="flex-1">
         <Image

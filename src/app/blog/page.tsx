@@ -14,6 +14,7 @@ const getData = async () => {
 
 const Blog = async () => {
   const blogData = await getData();
+  console.log(blogData);
 
   return (
     <div className="space-y-10 py-12">
@@ -26,6 +27,7 @@ const Blog = async () => {
             title={blog.title}
             desc={blog.desc}
             image={blog.image}
+            author={blog.username}
           />
         );
       })}
