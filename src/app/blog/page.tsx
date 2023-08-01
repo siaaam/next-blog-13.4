@@ -2,6 +2,8 @@
 import BlogItem from "@/components/BlogItem";
 import useSWR from "swr";
 
+// this code works on development environment. But don't work on production. It gives pre-rendering error. But when using client side data fetching no error occurs.
+
 // const getData = async () => {
 //   try {
 //     const data = await fetch(`${process.env.URL}/api/posts`, {
@@ -13,7 +15,7 @@ import useSWR from "swr";
 //   }
 // };
 
-const Blog = async () => {
+const Blog = () => {
   const fetcher = (...args: Parameters<typeof fetch>) => {
     return fetch(...args).then((res) => res.json());
   };
